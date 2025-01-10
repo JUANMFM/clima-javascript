@@ -21,9 +21,12 @@ A continuación se muestra el código JavaScript necesario para realizar la soli
 
 0. 
 // En vez de tener el API key directamente en el código
-let api_key = process.env.WEATHER_API_KEY
 //let ciudad = 'Londres'
-let difKelvin = 273.15
+
+
+    let api_key = process.env.WEATHER_API_KEY
+
+    let difKelvin = 273.15
 
     let urlBase = 'https://api.openweathermap.org/data/2.5/weather'
 
@@ -44,16 +47,19 @@ El código anterior consta de dos funciones principales: `fetchDatosClima(ciudad
 
 1.  `fetchDatosClima(ciudad)`: Esta función se encarga de hacer una solicitud a la API de OpenWeatherMap para obtener los datos del clima de la ciudad especificada. Recibe el nombre de la ciudad como parámetro. Utiliza la función `fetch()` para enviar una solicitud GET a la URL de la API, incluyendo la ciudad y tu clave de API. Luego, convierte la respuesta en formato JSON utilizando el método `json()`. Finalmente, llama a la función `mostrarDatosClima(data)` pasando los datos obtenidos como argumento.
 
+
+`
     function fetchDatosClima(ciudad){
         fetch(`${urlBase}?q=${ciudad}&appid=${api_key}`)
         .then(data => data.json())
         .then(data => mostrarDatosClima(data))
     }
-    
+`
+
 2.  `mostrarDatosClima(data)`: Esta función se encarga de mostrar los datos del clima en la página. Recibe los datos del clima en formato JSON como parámetro. Primero, obtiene las diferentes propiedades relevantes de los datos, como el nombre de la ciudad, el nombre del país, la temperatura, la humedad, la descripción y el icono del clima. Luego, crea elementos HTML apropiados, como encabezados y párrafos, y les asigna el contenido correspondiente utilizando la propiedad `textContent`. También crea un elemento de imagen para mostrar el icono del clima. Finalmente, agrega todos los elementos creados al elemento `<div>` con el ID "datosClima" en tu página.
 
 
-
+ `
 
     function mostrarDatosClima(data){
         const divDatosClima = document.getElementById('datosClima')
