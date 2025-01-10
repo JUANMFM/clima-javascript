@@ -1,4 +1,5 @@
-let api_key = 'dc64641e6bf4748f8ccb1f95eb376f48'
+// En vez de tener el API key directamente en el código
+let api_key = process.env.WEATHER_API_KEY
 //let ciudad = 'Londres'
 let difKelvin = 273.15
 
@@ -71,7 +72,3 @@ function mostrarDatosClima(data){
 
 
 
-// ////
-// fetch('api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=ef1c1c668cf0b3c2006ee01b3cb153a9')
-//     .then(response => response.json())
-//     .then(response => console.log(response))
