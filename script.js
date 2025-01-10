@@ -1,5 +1,6 @@
 // En vez de tener el API key directamente en el código
-let api_key = process.env.WEATHER_API_KEY
+//let api_key = process.env.WEATHER_API_KEY
+let api_key = netlifyEnvironment.WEATHER_API_KEY;
 //let ciudad = 'Londres'
 let difKelvin = 273.15
 
